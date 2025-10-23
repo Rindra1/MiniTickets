@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MiniTickets\\Client\\Client.csproj": {}
+    "c:\\MiniTickets\\Client\\Client.csproj": {}
   },
   "projects": {
-    "C:\\MiniTickets\\Client\\Client.csproj": {
+    "c:\\MiniTickets\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MiniTickets\\Client\\Client.csproj",
+        "projectUniqueName": "c:\\MiniTickets\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "C:\\MiniTickets\\Client\\Client.csproj",
+        "projectPath": "c:\\MiniTickets\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\Rindra\\.nuget\\packages\\",
-        "outputPath": "C:\\MiniTickets\\Client\\obj\\",
+        "outputPath": "c:\\MiniTickets\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\ProgramData\\Xamarin\\NuGet\\",

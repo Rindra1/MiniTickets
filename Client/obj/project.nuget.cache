@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K231V/CrMSw=",
+  "dgSpecHash": "i8jdcy5CtPY=",
   "success": true,
-  "projectFilePath": "C:\\MiniTickets\\Client\\Client.csproj",
+  "projectFilePath": "c:\\MiniTickets\\Client\\Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rindra\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.19\\microsoft.aspnetcore.authorization.8.0.19.nupkg.sha512",
     "C:\\Users\\Rindra\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.19\\microsoft.aspnetcore.components.8.0.19.nupkg.sha512",

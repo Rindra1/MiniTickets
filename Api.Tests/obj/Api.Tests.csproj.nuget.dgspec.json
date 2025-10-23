@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MiniTickets\\Api.Tests\\Api.Tests.csproj": {}
+    "c:\\MiniTickets\\Api.Tests\\Api.Tests.csproj": {}
   },
   "projects": {
-    "C:\\MiniTickets\\Api.Tests\\Api.Tests.csproj": {
+    "c:\\MiniTickets\\Api.Tests\\Api.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MiniTickets\\Api.Tests\\Api.Tests.csproj",
+        "projectUniqueName": "c:\\MiniTickets\\Api.Tests\\Api.Tests.csproj",
         "projectName": "Api.Tests",
-        "projectPath": "C:\\MiniTickets\\Api.Tests\\Api.Tests.csproj",
+        "projectPath": "c:\\MiniTickets\\Api.Tests\\Api.Tests.csproj",
         "packagesPath": "C:\\Users\\Rindra\\.nuget\\packages\\",
-        "outputPath": "C:\\MiniTickets\\Api.Tests\\obj\\",
+        "outputPath": "c:\\MiniTickets\\Api.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\ProgramData\\Xamarin\\NuGet\\",
@@ -32,7 +32,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "c:\\MiniTickets\\Api\\Api.csproj": {
+                "projectPath": "c:\\MiniTickets\\Api\\Api.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -79,6 +83,88 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.413/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "c:\\MiniTickets\\Api\\Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\MiniTickets\\Api\\Api.csproj",
+        "projectName": "Api",
+        "projectPath": "c:\\MiniTickets\\Api\\Api.csproj",
+        "packagesPath": "C:\\Users\\Rindra\\.nuget\\packages\\",
+        "outputPath": "c:\\MiniTickets\\Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Rindra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.19, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

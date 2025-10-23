@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\MiniTickets\\Api\\Api.csproj": {}
+    "c:\\MiniTickets\\Api\\Api.csproj": {}
   },
   "projects": {
-    "C:\\MiniTickets\\Api\\Api.csproj": {
+    "c:\\MiniTickets\\Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\MiniTickets\\Api\\Api.csproj",
+        "projectUniqueName": "c:\\MiniTickets\\Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "C:\\MiniTickets\\Api\\Api.csproj",
+        "projectPath": "c:\\MiniTickets\\Api\\Api.csproj",
         "packagesPath": "C:\\Users\\Rindra\\.nuget\\packages\\",
-        "outputPath": "C:\\MiniTickets\\Api\\obj\\",
+        "outputPath": "c:\\MiniTickets\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\ProgramData\\Xamarin\\NuGet\\",
@@ -53,6 +53,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.19, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.5.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
