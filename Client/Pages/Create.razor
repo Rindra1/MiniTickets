@@ -1,0 +1,36 @@
+@page "/create"
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject NavigationManager Nav
+@inject IJSRuntime JSRuntime
+
+<h3>Create ticket</h3>
+
+<input placeholder="Title" @bind="title" />
+<textarea placeholder="Description" @bind="description"></textarea>
+<button @onclick="CreateTicket">Create</button>
+
+@code {
+    string title = "";
+    string? description;
+
+    async Task CreateTicket()
+    {
+        if (string.IsNullOrWhiteSpace(title) || title.Length < 3)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Title 3..100 chars");
+            return;
+        }
+        var dto = new { Title = title, Description = description };
+        var res = await Http.PostAsJsonAsync("/api/tickets", dto);
+        if (res.IsSuccessStatusCode)
+        {
+            Nav.NavigateTo("/");
+        }
+        else
+        {
+            var txt = await res.Content.ReadAsStringAsync();
+            await JSRuntime.InvokeVoidAsync("alert", "Error: " + txt);
+        }
+    }
+}

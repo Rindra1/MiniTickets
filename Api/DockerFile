@@ -1,0 +1,20 @@
+# Stage 1 : Build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copier csproj et solution
+COPY ../*.sln ./
+COPY Api/*.csproj ./Api/
+RUN dotnet restore
+
+# Copier le code complet et publier
+COPY Api/. ./Api/
+WORKDIR /src/Api
+RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
+
+# Stage 2 : Runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/publish .
+EXPOSE 5000
+ENTRYPOINT ["dotnet", "Api.dll"]

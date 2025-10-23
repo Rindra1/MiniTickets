@@ -1,0 +1,117 @@
+@page "/"
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject IJSRuntime JSRuntime
+
+
+<h3>Tickets</h3>
+
+<select @onchange="OnStatusChange">
+    <option value="">All</option>
+    <option value="Open">Open</option>
+    <option value="InProgress">InProgress</option>
+    <option value="Done">Done</option>
+</select>
+
+<button @onclick="Prev" disabled="@(_page==1)">Prev</button>
+<button @onclick="Next">Next</button>
+<p>Page @_page</p>
+
+@if (loading) { <p>Loading...</p> }
+else if (tickets is null) { <p>No tickets</p> }
+else 
+{
+    <table>
+        <thead><tr><th>Title</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody>
+            @foreach(var t in tickets)
+            {
+                <tr>
+                    <td>@t.Title</td>
+                    <td>@t.Status</td>
+                    <td>
+                        @if (t.Status != "Done")
+                        {
+                            <button @onclick='() => UpdateStatus(t.Id, "Done")'>Mark Done</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a href="/create">Create ticket</a>
+
+@code {
+    record TicketDto(string Id, string Title, string? Description, string Status, DateTime CreatedAt, DateTime UpdatedAt);
+    List<TicketDto>? tickets;
+    string? filter;
+    int _page = 1;
+    int _pageSize = 10;
+    bool loading = false;
+
+    protected override Task OnInitializedAsync() => Load();
+
+    async Task Load()
+    {
+        loading = true;
+        var url = $"/api/tickets?page={_page}&pageSize={_pageSize}";
+        if (!string.IsNullOrEmpty(filter)) url += $"&status={filter}";
+        var res = await Http.GetFromJsonAsync<ResponseDto>(url);
+        tickets = res?.items?.Select(i => new TicketDto(i.Id, i.Title, i.Description, i.Status.ToString(), i.CreatedAt, i.UpdatedAt)).ToList();
+        loading = false;
+    }
+
+    Task OnStatusChange(ChangeEventArgs e)
+    {
+        filter = e.Value?.ToString();
+        _page = 1;
+        return Load();
+    }
+
+    Task Prev() { _page = Math.Max(1, _page - 1); return Load(); }
+    Task Next() { _page++; return Load(); }
+
+    async Task UpdateStatus(string id, string newStatus)
+    {
+        int statusValue = newStatus switch
+        {
+            "Open" => 0,
+            "InProgress" => 1,
+            "Done" => 2,
+            _ => 0
+        };
+
+        // Envoi le nombre attendu par l'API
+        var dto = new { Status = statusValue };  
+
+        var resp = await Http.PutAsJsonAsync($"/api/tickets/{id}/status", dto);
+        if (resp.IsSuccessStatusCode) 
+            await Load();
+        else
+        {
+            var text = await resp.Content.ReadAsStringAsync();
+            await JSRuntime.InvokeVoidAsync("alert", "Error: " + text);
+        }
+    }
+
+
+    class ResponseDto
+    {
+        public List<ItemDto>? items { get; set; }
+        public long total { get; set; }
+        public int page { get; set; }
+        public int pageSize { get; set; }
+    }
+    class ItemDto 
+{ 
+    public string Id { get; set; } = ""; 
+    public string Title { get; set; } = ""; 
+    public string? Description { get; set; } 
+    public int Status { get; set; }  // <-- int ici
+    public DateTime CreatedAt { get; set; } 
+    public DateTime UpdatedAt { get; set; } 
+}
+
+}
