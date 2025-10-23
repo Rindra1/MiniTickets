@@ -118,3 +118,6 @@ app.MapPut("/api/tickets/{id}/status", async (string id, Api.Dtos.TicketStatusUp
 });
 
 app.Run();
+
+public partial class Program { }
+
