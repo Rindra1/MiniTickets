@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LTblVoRNGCY=",
+  "dgSpecHash": "zfEBE32pMXM=",
   "success": true,
-  "projectFilePath": "c:\\MiniTickets\\Api.Tests\\Api.Tests.csproj",
+  "projectFilePath": "C:\\MiniTickets\\Api.Tests\\Api.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rindra\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\Rindra\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",

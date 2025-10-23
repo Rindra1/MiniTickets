@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lAGDiz1gRAA=",
+  "dgSpecHash": "9D9O/Vp6pKQ=",
   "success": true,
-  "projectFilePath": "c:\\MiniTickets\\Api\\Api.csproj",
+  "projectFilePath": "C:\\MiniTickets\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rindra\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\Rindra\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.19\\microsoft.aspnetcore.openapi.8.0.19.nupkg.sha512",

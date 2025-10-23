@@ -6504,8 +6504,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\MiniTickets\\Api\\Api.csproj": {
-              "projectPath": "c:\\MiniTickets\\Api\\Api.csproj"
+            "C:\\MiniTickets\\Api\\Api.csproj": {
+              "projectPath": "C:\\MiniTickets\\Api\\Api.csproj"
             }
           }
         }
